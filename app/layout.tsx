@@ -22,16 +22,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning className={`${geistSans.variable}  ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="h-screen antialiased">
+      <body className="h-screen antialiased" suppressHydrationWarning>
         <Providers>
-          <main className="bg-background text-foreground"> {children}
+          <main className="bg-background text-foreground">
+            {children}
           </main>
         </Providers>
-
       </body>
-
     </html>
   );
 }
