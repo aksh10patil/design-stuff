@@ -77,7 +77,7 @@ export const Grid = () => {
 }
 
 
-const CardSkeleton = ({ children }: {
+export const CardSkeleton = ({ children }: {
   children: React.ReactNode;
 }) => {
   return (
@@ -117,9 +117,9 @@ const ModelRow = ({ icon, name, status, color }: {
   )
 }
 
-const ModelSelectorMock = () => {
+export const ModelSelectorMock = () => {
   return (
-    <div className='relative h-full w-full text-left'>
+    <div className='relative h-full w-full text-left -translate-y-28 '>
       <div className='absolute inset-x-4 top-10 rounded-xl shadow-[-8px_0_20px_-10px_rgba(0,0,0,0.15),8px_0_20px_-10px_rgba(0,0,0,0.15)]'>
         <div className='rounded-xl bg-white overflow-hidden mask-[linear-gradient(to_bottom,white_85%,transparent_100%)]'>
           <div className='flex items-center gap-1.5 px-4 py-5 border-b border-neutral-100'>
@@ -156,7 +156,7 @@ const ModelSelectorMock = () => {
   )
 }
 
-const CardContent = ({ children }: {
+export const CardContent = ({ children }: {
   children: React.ReactNode;
 }) => {
   return (
@@ -167,7 +167,7 @@ const CardContent = ({ children }: {
 
 }
 
-const CardHeader = ({ children }: {
+export const CardHeader = ({ children }: {
   children: React.ReactNode;
 }) => {
   return (
@@ -178,7 +178,7 @@ const CardHeader = ({ children }: {
 
 }
 
-const Card = ({ className, children }: {
+export const Card = ({ className, children }: {
   className?: string,
   children: React.ReactNode
 }) => {
@@ -187,16 +187,13 @@ const Card = ({ className, children }: {
 
 }
 
-
-
-const CardTitle = ({ children }: {
+export const CardTitle = ({ children }: {
   children: React.ReactNode,
 }) => {
   return <h2 className='font-semibold text-base text-neutral-900 tracking-tight'>{children}</h2>
 }
 
-
-const CardDescription = ({ children }: {
+export const CardDescription = ({ children }: {
   children: React.ReactNode,
 }) => {
   return <p className='text-sm text-neutral-500 leading-relaxed'>{children}</p>

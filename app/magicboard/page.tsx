@@ -68,7 +68,7 @@ const SOUND_PROFILES = {
 } as const;
 
 type SoundProfile = keyof typeof SOUND_PROFILES;
-export default function () {
+export default function MagicBoard({ isCard = false }: { isCard?: boolean } = {}) {
     const [theme, setTheme] = useState<ThemeName>("silver");
     const [soundOn, setSoundOn] = useState(true);
 
@@ -136,13 +136,20 @@ export default function () {
     return (
 
         <div
-            className="bg-[var(--page)] h-screen w-full flex flex-col items-center justify-center gap-12 transition-colors duration-500"
+            className={
+                isCard
+                    ? "bg-[var(--page)] w-full min-h-[460px] flex flex-col items-center justify-center gap-6 p-4 sm:p-6 transition-colors duration-500 rounded-2xl overflow-hidden relative"
+                    : "bg-[var(--page)] h-screen w-full flex flex-col items-center justify-center gap-12 transition-colors duration-500"
+            }
             style={THEMES[theme].vars as CSSProperties}
         >
-            <div
-                onPointerDown={handleKeyPress}
-                className="bg-[var(--chassis)] h-84 w-196 rounded-2xl p-1.5 font-apple [text-shadow:0_1px_0_var(--legend-shadow)] transition-colors duration-500"
-            >
+            <div className={isCard ? "w-full overflow-x-auto flex justify-center py-2 no-scrollbar" : ""}>
+                <div
+                    onPointerDown={handleKeyPress}
+                    className={`bg-[var(--chassis)] h-84 w-196 rounded-2xl p-1.5 font-apple [text-shadow:0_1px_0_var(--legend-shadow)] transition-colors duration-500 ${
+                        isCard ? "scale-[0.55] sm:scale-[0.7] md:scale-[0.78] lg:scale-[0.72] xl:scale-[0.8] origin-center shrink-0 my-[-20px]" : ""
+                    }`}
+                >
                 <div className="flex flex-col justify-center h-full gap-1.5 items-stretch">
 
 
@@ -433,6 +440,7 @@ export default function () {
 
 
                 </div>
+            </div>
             </div>
 
             <div className="flex flex-row items-center gap-5">
