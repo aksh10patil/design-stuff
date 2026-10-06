@@ -8,6 +8,12 @@ import { Magicboard } from "@/app/components/moodboard/MagicboardCard";
 import { Motion } from "@/app/components/moodboard/MotionCard";
 import { Playground } from "@/app/components/moodboard/PlaygroundCard";
 import { HairlineCard } from "@/app/components/moodboard/HairlineCard";
+import { FolderCard } from "@/app/components/moodboard/FolderCard";
+import { VoiceNoteCard } from "@/app/components/moodboard/VoiceNoteCard";
+import { DeleteButtonCard } from "@/app/components/moodboard/DeleteButtonCard";
+import { TaskListCard } from "@/app/components/moodboard/TaskListCard";
+import { AnimatedCounterCard } from "@/app/components/moodboard/AnimatedCounterCard";
+import { OtpInputCard } from "@/app/components/moodboard/OtpInputCard";
 
 export default function Home() {
   return (
@@ -21,7 +27,7 @@ export default function Home() {
               Moodboard
             </h1>
             <p className="text-xs text-neutral-400 mt-1">
-              Frontend UI design experiments.
+              Frontend UI design experiments & interactive components.
             </p>
           </div>
 
@@ -48,27 +54,56 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="md:col-span-2">
             <Magicboard />
+          </div>
 
-            <div>
+          <div>
+            <FolderCard />
+          </div>
+
+          <div>
+            <VoiceNoteCard />
+          </div>
+
+          <div>
+            <TaskListCard />
+          </div>
+
+          <div>
+            <AnimatedCounterCard />
+          </div>
+
+          <div>
+            <OtpInputCard />
+          </div>
+
+          <div>
+            <DeleteButtonCard />
+          </div>
+
+          <div>
             <HairlineCard />
           </div>
-          </div>
-       
+
           <div>
             <Grok />
           </div>
+
           <div>
             <Motion />
           </div>
+
           <div>
             <Grid />
           </div>
+
           <div>
             <Playground />
           </div>
+
           <div>
             <Hooks />
           </div>
+
           <div>
             <Func />
           </div>
