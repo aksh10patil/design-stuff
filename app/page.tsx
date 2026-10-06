@@ -7,6 +7,7 @@ import { Hooks } from "@/app/components/moodboard/HooksCard";
 import { Magicboard } from "@/app/components/moodboard/MagicboardCard";
 import { Motion } from "@/app/components/moodboard/MotionCard";
 import { Playground } from "@/app/components/moodboard/PlaygroundCard";
+import { HairlineCard } from "@/app/components/moodboard/HairlineCard";
 
 export default function Home() {
   return (
@@ -38,6 +39,8 @@ export default function Home() {
             <Link href="/motion" className="hover:text-white transition-colors">motion</Link>
             <span className="text-neutral-800">/</span>
             <Link href="/playground" className="hover:text-white transition-colors">playground</Link>
+            <span className="text-neutral-800">/</span>
+            <Link href="/hairline-effects" className="text-emerald-400 hover:text-emerald-300 transition-colors">hairline</Link>
           </nav>
         </header>
 
@@ -45,7 +48,12 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="md:col-span-2">
             <Magicboard />
+
+            <div>
+            <HairlineCard />
           </div>
+          </div>
+       
           <div>
             <Grok />
           </div>
