@@ -23,6 +23,12 @@ export const OtpInputCard: React.FC = () => {
     setKey((prev) => prev + 1);
   };
 
+  const autofill = () => {
+    const sample = Math.floor(100000 + Math.random() * 900000).toString();
+    setCode(sample);
+    handleComplete(sample);
+  };
+
   return (
     <div className="flex flex-col rounded-2xl border border-neutral-800 bg-neutral-950 p-5 transition hover:border-neutral-700">
       <div className="flex items-center justify-between mb-4">
@@ -33,6 +39,13 @@ export const OtpInputCard: React.FC = () => {
           </span>
         </div>
         <div className="flex items-center gap-2">
+          <button
+            onClick={autofill}
+            className="px-2 py-0.5 text-[11px] font-mono rounded-md bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white transition"
+            title="Auto-fill random code"
+          >
+            Fill Demo
+          </button>
           <button
             onClick={() => setMask((m) => !m)}
             className="p-1 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 transition"

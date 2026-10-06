@@ -44,6 +44,19 @@ const themes = {
     cardLineFill: "#D4D4D4",
     cardInsetColor: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0",
   },
+  emerald: {
+    backFill: "#065f46",
+    backInsetColor: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0",
+    backInsetShadow: "inset 0 0 6px 2px rgba(255,255,255,0.35)",
+    flapFill: "#059669",
+    flapFillOpacity: 0.55,
+    flapStroke: "#34d399",
+    flapInsetColor: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0",
+    cardFill: "#0f172a",
+    cardStroke: "#1e293b",
+    cardLineFill: "#334155",
+    cardInsetColor: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0",
+  },
 } as const;
 
 const sizeScales = {
@@ -53,7 +66,7 @@ const sizeScales = {
 } as const;
 
 export type FolderComponentProps = Omit<React.ComponentProps<"div">, "color"> & {
-  color?: "black" | "white" | "blue";
+  color?: "black" | "white" | "blue" | "emerald";
   size?: "sm" | "md" | "lg";
 };
 
@@ -292,6 +305,8 @@ const Card = ({ id, theme }: { id: number; theme: Theme }) => {
           rx="19.5"
           stroke={theme.cardStroke}
         />
+        <circle cx="20" cy="19" r="2.5" fill={theme.cardLineFill} opacity="0.6" />
+        <rect x="28" y="17" width="24" height="4" rx="2" fill={theme.cardLineFill} opacity="0.4" />
         <rect
           x="14.1193"
           y="31.2091"

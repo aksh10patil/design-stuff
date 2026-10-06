@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FolderComponent } from "@/components/ui/folder-component";
 
 export const FolderCard: React.FC = () => {
-  const [color, setColor] = useState<"blue" | "black" | "white">("blue");
+  const [color, setColor] = useState<"emerald" | "blue" | "black" | "white">("emerald");
 
   return (
     <div className="flex flex-col rounded-2xl border border-neutral-800 bg-neutral-950 p-5 transition hover:border-neutral-700">
@@ -15,8 +15,8 @@ export const FolderCard: React.FC = () => {
             3d motion
           </span>
         </div>
-        <div className="flex items-center gap-1.5 bg-neutral-900/80 p-1 rounded-lg border border-neutral-800/80 text-[11px] font-mono">
-          {(["blue", "black", "white"] as const).map((c) => (
+        <div className="flex items-center gap-1 bg-neutral-900/80 p-1 rounded-lg border border-neutral-800/80 text-[11px] font-mono">
+          {(["emerald", "blue", "black", "white"] as const).map((c) => (
             <button
               key={c}
               onClick={() => setColor(c)}
@@ -33,6 +33,7 @@ export const FolderCard: React.FC = () => {
       </div>
 
       <div className="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800/80 p-6 min-h-[320px] flex flex-col items-center justify-center relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-800/20 via-transparent to-transparent pointer-events-none" />
         <FolderComponent color={color} size="md" />
         <span className="text-[11px] font-mono text-neutral-500 mt-6 select-none pointer-events-none">
           Hover to fan cards · Click to lift flap

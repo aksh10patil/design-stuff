@@ -31,26 +31,34 @@ export const AnimatedCounterCard: React.FC = () => {
       </div>
 
       <div className="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800/80 p-6 min-h-[320px] flex flex-col items-center justify-center relative gap-6">
-        <div className="p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800/80 flex flex-col items-center gap-4 shadow-xl">
-          <div className="text-4xl sm:text-5xl font-mono font-bold tracking-tight text-white flex items-center">
+        <div className="p-6 sm:p-7 rounded-2xl bg-neutral-950/90 border border-neutral-800/90 flex flex-col items-center gap-4 shadow-2xl min-w-[280px]">
+          <div className="flex items-center justify-between w-full text-[10px] font-mono text-neutral-400 pb-2 border-b border-neutral-800/80">
+            <span>INDEX // REVENUE_ARR</span>
+            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              LIVE
+            </span>
+          </div>
+
+          <div className="px-5 py-3 rounded-xl bg-[#0b0b0f] border border-neutral-800/80 shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] text-3xl sm:text-4xl font-mono font-bold tracking-tight text-white flex items-center">
             <AnimatedCounter
               value={val}
               duration={0.65}
-              prefix={<span className="text-neutral-500 mr-1">$</span>}
+              prefix={<span className="text-neutral-500 mr-1.5 font-sans font-light">$</span>}
             />
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
+          <div className="flex items-center gap-1.5 pt-1">
             {[
-              { label: "-250", delta: -250 },
-              { label: "-50", delta: -50 },
-              { label: "+100", delta: 100 },
-              { label: "+500", delta: 500 },
+              { label: "-500", delta: -500 },
+              { label: "+250", delta: 250 },
+              { label: "+1.2K", delta: 1200 },
+              { label: "+5K", delta: 5000 },
             ].map(({ label, delta }) => (
               <button
                 key={label}
                 onClick={() => setVal((v) => Math.max(0, v + delta))}
-                className="px-2.5 py-1 text-xs font-mono font-medium rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition"
+                className="px-2.5 py-1 text-xs font-mono font-medium rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition active:scale-95"
               >
                 {label}
               </button>

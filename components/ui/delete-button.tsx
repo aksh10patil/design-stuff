@@ -43,16 +43,16 @@ const PRESS = {
 } as const;
 const INSTANT = { duration: 0 } as const;
 
-const SURFACE = "bg-[#F4F4F9] dark:bg-[#262626]";
-const RECESS = "bg-[#E7E7EF] dark:bg-[#1B1B1B]";
-const GLYPH = "text-[#868593] dark:text-[#9B9AA7]";
-const FOCUS = "outline-none focus-visible:ring-2 focus-visible:ring-[#868593]";
-const ACCENT = "#FF5F2E";
+const SURFACE = "bg-[#F4F4F9] dark:bg-[#1A1A1E] dark:border dark:border-neutral-800/70";
+const RECESS = "bg-[#E7E7EF] dark:bg-[#111114] dark:border dark:border-neutral-800/60";
+const GLYPH = "text-[#868593] dark:text-[#A1A1AA]";
+const FOCUS = "outline-none focus-visible:ring-2 focus-visible:ring-[#f43f5e]/50";
+const ACCENT = "#F43F5E";
 
 const LIFT =
-  "shadow-[0_0.5px_1px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.08),inset_0_0.5px_0_rgba(255,255,255,0.9)] dark:shadow-[0_0.5px_1px_rgba(0,0,0,0.35),0_1.5px_4px_rgba(0,0,0,0.25),inset_0_0.5px_0_rgba(255,255,255,0.07)]";
+  "shadow-[0_0.5px_1px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.08),inset_0_0.5px_0_rgba(255,255,255,0.9)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.5),0_3px_8px_rgba(0,0,0,0.3),inset_0_0.5px_0_rgba(255,255,255,0.1)]";
 
-const CIRCLE = `grid h-7 w-7 place-items-center rounded-full transition-colors duration-200 hover:bg-[#FAFAFD] dark:hover:bg-[#2C2C2C] ${FOCUS} ${SURFACE} ${LIFT}`;
+const CIRCLE = `grid h-7 w-7 place-items-center rounded-full transition-all duration-200 hover:scale-105 active:scale-95 hover:bg-[#FAFAFD] dark:hover:bg-[#25252B] ${FOCUS} ${SURFACE} ${LIFT}`;
 
 const ICON = {
   viewBox: "0 0 24 24",

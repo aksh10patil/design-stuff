@@ -21,8 +21,11 @@ export const DeleteButtonCard: React.FC = () => {
       </div>
 
       <div className="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800/80 p-6 min-h-[320px] flex flex-col items-center justify-center gap-6">
-        <div className="p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800/80 flex flex-col items-center gap-4 shadow-xl">
-          <span className="text-xs text-neutral-400 font-mono">Micro-interaction in place</span>
+        <div className="p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800/80 flex flex-col items-center gap-5 shadow-xl">
+          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900/90 border border-neutral-800 text-[11px] font-mono text-neutral-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500/80" />
+            <span>cache_snapshot_v1.tar</span>
+          </div>
           <DeleteButton
             onConfirm={() => setHistory("Confirmed (Deleted)")}
             onCancel={() => setHistory("Cancelled (Kept)")}

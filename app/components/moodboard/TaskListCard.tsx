@@ -5,10 +5,10 @@ import { TaskList, type Task } from "@/components/ui/task-list";
 import { RotateCcw } from "lucide-react";
 
 const INITIAL_TASKS: Task[] = [
-  { id: "1", label: "Refactor design tokens", done: false },
-  { id: "2", label: "Audit spring curves & friction", done: true },
-  { id: "3", label: "Ship interactive micro-interactions", done: false },
-  { id: "4", label: "Polish dark aesthetic moodboard", done: false },
+  { id: "1", label: "01 · Refactor design token scales", done: false },
+  { id: "2", label: "02 · Audit spring curves & friction", done: true },
+  { id: "3", label: "03 · Ship interactive micro-interactions", done: false },
+  { id: "4", label: "04 · Polish dark aesthetic moodboard", done: false },
 ];
 
 export const TaskListCard: React.FC = () => {
@@ -51,7 +51,7 @@ export const TaskListCard: React.FC = () => {
             key={key}
             tasks={tasks}
             onTasksChange={setTasks}
-            accent="#3b82f6"
+            accent="#10B981"
             size="sm"
           />
         </div>
